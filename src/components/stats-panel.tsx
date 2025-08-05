@@ -20,16 +20,17 @@ export function StatsPanel({
   dataSources,
   isDarkMode,
 }: StatsPanelProps) {
-  const getAverageValue = (field: string) => {
+  const getAverageValue = (field: string): number | null => {
     let total = 0
     let count = 0
 
     polygons.forEach((polygon) => {
       const data = weatherData[polygon.id]
-      if (!data || !data.hourly || !data.hourly[field] || !data.hourly.time) return
+      if (!data?.hourly?.[field] || !data.hourly.time) return
 
+      // ✅ Fix: Give 't' an explicit type
       const timeArray = data.hourly.time.map((t: string) => new Date(t).getTime())
-      const hourIndex = timeArray.findIndex((t) => t >= currentTime.getTime())
+      const hourIndex = timeArray.findIndex((t: number) => t >= currentTime.getTime())
 
       if (hourIndex !== -1 && hourIndex < data.hourly[field].length) {
         const value = data.hourly[field][hourIndex]
