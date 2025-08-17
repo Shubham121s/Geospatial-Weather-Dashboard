@@ -1,6 +1,6 @@
 **Geospatial-Weather-Dashboard**
 
-This is a full-stack web application built for the Software Development Engineering Internship assignment at Mind Webs Ventures. The application demonstrates interactive mapping capabilities, real-time data visualization, and polygon drawing tools with a custom map simulation.
+This is a full-stack web application built for the Software Development Engineering . The application demonstrates interactive mapping capabilities, real-time data visualization, and polygon drawing tools with a custom map simulation.
 
 ## 🚀 Features
 
